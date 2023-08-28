@@ -1,6 +1,5 @@
-const head = require('../head.js');
-const assertEqual = require('../assertEqual.js');
-const { assert } = require('chai');
+const assert = require('chai').assert;
+const head = require('../head');
 
 describe("#head", function() {
   it('return 1 for [1, 2, 3]', () => {
