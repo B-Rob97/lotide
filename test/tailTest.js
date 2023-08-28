@@ -1,18 +1,48 @@
 const tail = require('../tail');
-const assertEqual = require('../assertEqual');
+const { expect, assert } = require('chai');
 
-const testNumbers = [5, 10, 15, 20, 25];
-console.log("RETURN: [10, 15, 20, 25]",tail(testNumbers));
+describe("Tail Tests", function() {
+  it("Returns [10, 15, 20, 25] when passed [5, 10, 15, 20, 25]", function() {
+    const input = [5, 10, 15, 20, 25];
+    const expected = [10, 15, 20, 25];
+    const result = tail(input);
+    expect(result).to.deep.equal(expected);
+  });
 
-console.log("RETURN: [2, 1]", tail([3, 2, 1]));
-console.log("RETURN: ['World]" ,tail(["Hello", "World"]));
-console.log("RETURN: [5, 10, 15, 20, 25]",testNumbers);
-console.log("RETURN: []", tail([]));
-console.log("RETURN: []", tail([1]));
+  it("Returns [2, 1] when passed [3, 2, 1]", function() {
+    const input = [3, 2, 1];
+    const expected = [2, 1];
+    const result = tail(input);
+    assert.deepEqual(result, expected);
+  });
 
+  it("Returns ['World'] when passed ['Hello', 'World']", function() {
+    const input = ['Hello', 'World'];
+    const expected = ['World'];
+    const result = tail(input);
+    assert.deepEqual(result, expected);
+  });
 
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-console.log("RETURN: ['Lighthhouse', 'Labs']", tail(words));
+  it("Returns [] when passed []", function() {
+    const input = [];
+    const expected = [];
+    const result = tail(input);
+    assert.deepEqual(result, expected);
+  });
 
-assertEqual(words.length, 3);
-assertEqual(tail(testNumbers), testNumbers);
+  it("Returns [] when passed [1]", function() {
+    const input = [1];
+    const expected = [];
+    const result = tail(input);
+    assert.deepEqual(result, expected);
+  });
+
+  it("Returns ['Lighthouse', 'Labs'] when passed ['Yo Yo', 'Lighthouse', 'Labs'] & Checks if original string is unchanged", function() {
+    const input = ["Yo Yo", "Lighthouse", "Labs"];
+    const expected = ['Lighthouse', 'Labs'];
+    const result = tail(input);
+    assert.deepEqual(result, expected);
+    assert.deepEqual(input, ["Yo Yo", "Lighthouse", "Labs"]);
+  });
+
+});
