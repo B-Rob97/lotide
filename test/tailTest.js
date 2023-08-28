@@ -1,8 +1,6 @@
 const tail = require('../tail');
 const assertEqual = require('../assertEqual');
 
-// Tests
-
 const testNumbers = [5, 10, 15, 20, 25];
 console.log("RETURN: [10, 15, 20, 25]",tail(testNumbers));
 
