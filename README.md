@@ -59,7 +59,7 @@ head(['Hello', 'Lighthouse', 'Labs']) // Returns 'Hello'
 
 ## `tail(arr)`:
 * The tail function returns all items from an array except the first item.
-  * The tail function will not return the tail elements as a new array.
+  * The tail function will return the tail elements as a new array.
   * An array with only one element will yield an empty array as its tail.
   * An empty array will yield an empty array as its tail.
 
@@ -205,8 +205,8 @@ countOnly(/* All items */, /* Items to count */) // Returns /* Counted items obj
 ```
 ## `countLetters(letters)`:
 * The countLetters function counts the occurrences of each letter in the given array.
-  * The function returns an object where each key represents a lowercase letter found in the array and the corresponding value is the count of that letter.
-  * The counting is case-insensitive.
+  * The function returns an object where each key represents a lowercase/uppercase letter found in the array and the corresponding value is the count of that letter.
+  * The counting is case-sensitive.
   * Spaces in the array are ignored.
 
 #### Example
