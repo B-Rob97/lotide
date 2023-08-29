@@ -1,16 +1,15 @@
 const letterPositions = function(sentence) {
   const results = {};
-  for (let x = 0; x < sentence.length; x++) {
-    const letter = sentence[x];
-    if (letter !== " ") {
-      if (results[letter]) {
-        results[letter].push(x);
-      } else {
-        results[letter] = [x];
-      }
+  for (const i in sentence) {
+    const letter = sentence[i];
+    if (letter === " ") {
+      continue;
     }
+    if (!results[letter]) {
+      results[letter] = [];
+    }
+    results[letter].push(Number(i)); 
   }
-  console.log(results);
   return results;
 };
 
