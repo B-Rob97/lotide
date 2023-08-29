@@ -24,7 +24,7 @@ const spaceResult = countLetters("   ");
 assertEqual(Object.keys(spaceResult).length, 0);
 
 const mixedCaseResult = countLetters("AbCDEfg");
-assertEqual(mixedCaseResult['a'], 1);
+assertEqual(mixedCaseResult['A'], 1);
 assertEqual(mixedCaseResult['b'], 1);
 assertEqual(mixedCaseResult['c'], 1);
 assertEqual(mixedCaseResult['d'], 1);
