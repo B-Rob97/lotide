@@ -8,7 +8,7 @@ const letterPositions = function(sentence) {
     if (!results[letter]) {
       results[letter] = [];
     }
-    results[letter].push(Number(i)); 
+    results[letter].push(Number(i));
   }
   return results;
 };
